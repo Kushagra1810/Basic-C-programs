@@ -236,3 +236,103 @@ int main(){
     }
     return 0;
 }
+
+// Left-increasing numbers (column at left)
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Rows (e.g. 10): ");
+    if (scanf("%d", &n)!=1) return 0;
+
+    for (int i = 1; i <= n; ++i) {
+        for (int x = 1; x <= i; ++x)
+            printf("%d", x);
+        putchar('\n');
+    }
+    return 0;
+}
+
+// Centered number pyramid (1..i centered)
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Rows (e.g. 6): ");
+    if (scanf("%d", &n)!=1) return 0;
+
+    for (int i = 1; i <= n; ++i) {
+        
+        for (int s = 0; s < n - i; ++s) putchar(' ');
+        
+        for (int x = 1; x <= i; ++x) printf("%d", x);
+        putchar('\n');
+    }
+    return 0;
+}
+
+// Double-sequence diamond
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Max i (e.g. 6): ");
+    if (scanf("%d", &n)!=1) return 0;
+
+    
+    for (int i = 1; i <= n; ++i) {
+        for (int s = 0; s < n - i; ++s) putchar(' ');
+        for (int x = 1; x <= i; ++x) printf("%d", x);
+        for (int x = 1; x <= i; ++x) printf("%d", x); 
+        putchar('\n');
+    }
+    
+
+    for (int i = n - 1; i >= 1; --i) {
+        for (int s = 0; s < n - i; ++s) putchar(' ');
+        for (int x = 1; x <= i; ++x) printf("%d", x);
+        for (int x = 1; x <= i; ++x) printf("%d", x);
+        putchar('\n');
+    }
+    return 0;
+}
+
+// Pyramid of repeated 10 blocks
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Rows (e.g. 6): ");
+    if (scanf("%d", &n)!=1) return 0;
+
+    for (int i = 1; i <= n; ++i) {
+    
+        for (int s = 0; s < (n - i) * 1; ++s) putchar(' ');
+        for (int k = 0; k < i; ++k) printf("10");
+        putchar('\n');
+    }
+    return 0;
+}
+
+
+// Descending repeated-digit block
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Start from (e.g. 5): ");
+    if (scanf("%d", &n)!=1) return 0;
+
+    for (int i = n; i >= 1; --i) {
+        for (int k = 0; k < i; ++k)
+            printf("%d", i);
+        putchar('\n');
+    }
+    return 0;
+}
+
+
+
+
